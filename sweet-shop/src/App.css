@@ -1,0 +1,76 @@
+:root {
+  --primary: #e67e22;
+  --bg: #fdf2e9;
+  --dark: #2c3e50;
+}
+
+body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 0; }
+
+/* Header */
+header {
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  position: sticky; top: 0; z-index: 100;
+}
+
+.logo { font-size: 1.5rem; font-weight: bold; color: var(--primary); cursor: pointer; }
+
+.search-bar {
+  display: flex; align-items: center; background: #eee;
+  padding: 8px 15px; border-radius: 20px; width: 40%;
+}
+.search-bar input { border: none; background: transparent; outline: none; margin-left: 5px; width: 100%; }
+
+.nav-actions { display: flex; gap: 15px; }
+.icon-btn {
+  background: white; border: 1px solid #ddd; padding: 8px 15px; border-radius: 20px;
+  cursor: pointer; display: flex; align-items: center; gap: 5px; font-weight: bold; transition: 0.2s;
+}
+.icon-btn:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+.cart-btn { position: relative; }
+.badge { position: absolute; top: -5px; right: -5px; background: red; color: white; border-radius: 50%; padding: 2px 6px; font-size: 0.7rem; }
+
+/* Main Layout */
+main { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+
+/* Filters */
+.filters { display: flex; justify-content: center; gap: 10px; margin-bottom: 20px; }
+.filters button {
+  padding: 8px 20px; border: 1px solid #ddd; background: white; border-radius: 20px; cursor: pointer; transition: 0.2s;
+}
+.filters button.active, .filters button:hover { background: var(--primary); color: white; border-color: var(--primary); }
+
+/* Grid */
+.product-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px;
+}
+.card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); text-align: center; transition: transform 0.2s; }
+.card:hover { transform: translateY(-5px); }
+.card img { width: 100%; height: 160px; object-fit: cover; background: #eee; }
+.card-info { padding: 15px; }
+.card-info h3 { margin: 0 0 5px; font-size: 1.1rem; }
+.card-info p { color: var(--primary); font-weight: bold; }
+.card-info button {
+  background: var(--dark); color: white; border: none; padding: 8px 15px; border-radius: 5px; cursor: pointer; margin-top: 10px; width: 100%;
+}
+.card-info button:hover { background: var(--primary); }
+
+/* Cart */
+.cart-page { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.cart-item { display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; align-items: center; }
+.danger-btn { color: red; background: none; border: none; cursor: pointer; padding: 5px; }
+.total-box { text-align: right; margin-top: 20px; }
+.checkout-btn { background: var(--primary); color: white; padding: 12px 30px; border: none; border-radius: 5px; cursor: pointer; font-size: 1rem; }
+
+/* Admin */
+.admin-page { background: white; padding: 25px; border-radius: 10px; }
+.admin-form { display: grid; grid-template-columns: 2fr 1fr 1fr auto; gap: 10px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 2px dashed #eee; }
+.admin-form input, .admin-form select { padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+.admin-form button { background: var(--primary); color: white; border: none; padding: 0 20px; border-radius: 5px; cursor: pointer; display: flex; align-items: center; gap: 5px; }
+.admin-list ul { list-style: none; padding: 0; }
+.admin-list li { padding: 10px; background: #f9f9f9; margin-bottom: 5px; border-left: 4px solid var(--primary); }
